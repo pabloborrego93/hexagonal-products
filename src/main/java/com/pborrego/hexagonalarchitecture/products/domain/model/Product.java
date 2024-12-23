@@ -1,30 +1,37 @@
 package com.pborrego.hexagonalarchitecture.products.domain.model;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 public class Product {
 
-	private UUID id;
+	private UUID uuid;
 	private String name;
-	private Double price;
+	private BigDecimal price;
 	
 	public Product() {
 		super();
 	}
 
-	public Product(UUID id, String name, Double price) {
+	public Product(String name, BigDecimal price) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.price = price;
 	}
 
-	public UUID getId() {
-		return id;
+	public Product(UUID uuid, String name, BigDecimal price) {
+		super();
+		this.uuid = uuid;
+		this.name = name;
+		this.price = price;
 	}
 
-	public void setId(UUID id) {
-		this.id = id;
+	public UUID getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(UUID uuid) {
+		this.uuid = uuid;
 	}
 
 	public String getName() {
@@ -35,11 +42,11 @@ public class Product {
 		this.name = name;
 	}
 
-	public Double getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 
